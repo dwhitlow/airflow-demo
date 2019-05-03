@@ -1,6 +1,6 @@
 # airflow-demo
 
-This is a skeleton project for an Airflow 1.10 docker-compose-based setup.
+This is a skeleton project for an [Airflow](https://airflow.readthedocs.io/en/1.10.2/) 1.10 docker-compose-based setup.
 
 ## Running
 
