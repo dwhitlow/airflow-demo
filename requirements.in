@@ -1,0 +1,2 @@
+apache-airflow[celery,redis]==1.10.3
+psycopg2-binary==2.8.2

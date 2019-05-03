@@ -1,0 +1,37 @@
+# Runs Airflow with LocalExecutor
+version: '3'
+services:
+  airflow:
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    volumes:
+      # Sync airflow config changes
+      - ./airflow.cfg:${AIRFLOW_HOME}/airflow.cfg
+      # Sync logs
+      - /tmp/airflow-demo/logs:${AIRFLOW_HOME}/logs
+    environment:
+      # Airflow config variables defined through env vars will override settings in airflow.cfg:
+      # https://airflow.apache.org/howto/set-config.html
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql://${DB_USER}:${DB_PASS}@${DB_HOST}:5432/${AIRFLOW_DB_NAME}
+      - AIRFLOW__SCHEDULER__SCHEDULER_HEARTBEAT_SEC=1
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+    command:
+      # It's possible to run the scheduler and webserver separately, but running them in the same container simplifies
+      # the database initialization.
+      ["sh", "-c", "airflow initdb && (airflow scheduler &) && airflow webserver"]
+    # Quick and dirty hack to restart airflow if it fails due to postgres not being ready
+    restart: on-failure
+
+  # Database used to store airflow state. This is configured through sql_alchemy_conn in config.
+  postgres:
+    image: postgres:11-alpine
+    volumes:
+      # Persist postgres data
+      - /tmp/airflow-demo/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_DB=${AIRFLOW_DB_NAME}
