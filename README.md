@@ -1,6 +1,6 @@
 # airflow-demo
 
-This is a skeleton project for an [Airflow](https://airflow.readthedocs.io/en/1.10.2/) 1.10 docker-compose-based setup.
+This is a skeleton project for an [Airflow](https://airflow.readthedocs.io/en/1.10.2/) 1.10 docker-compose-based setup. This project is set up as a [repository template](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/): use [this link](https://github.com/dwhitlow/airflow-demo/generate) to generate a project from it.
 
 ## Running
 
