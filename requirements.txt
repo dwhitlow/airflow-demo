@@ -4,77 +4,216 @@
 #
 #    pip-compile --no-index
 #
-alembic==0.9.10           # via apache-airflow
-amqp==2.4.2               # via kombu
+alembic==0.9.10
+    # via apache-airflow
+amqp==2.4.2
+    # via kombu
 apache-airflow[celery,redis]==1.10.3
-babel==2.6.0              # via flask-babel, flower
-billiard==3.5.0.5         # via celery
-celery==4.1.1             # via apache-airflow, flower
-certifi==2019.3.9         # via requests
-chardet==3.0.4            # via requests
-click==7.0                # via flask, flask-appbuilder
-colorama==0.4.1           # via flask-appbuilder
-configparser==3.5.3       # via apache-airflow
-croniter==0.3.30          # via apache-airflow
-defusedxml==0.6.0         # via python3-openid
-dill==0.2.9               # via apache-airflow
-docutils==0.14            # via python-daemon
-flask-admin==1.5.3        # via apache-airflow
-flask-appbuilder==1.12.3  # via apache-airflow
-flask-babel==0.12.2       # via flask-appbuilder
-flask-caching==1.3.3      # via apache-airflow
-flask-login==0.4.1        # via apache-airflow, flask-appbuilder
-flask-openid==1.2.5       # via flask-appbuilder
-flask-sqlalchemy==2.4.0   # via flask-appbuilder
-flask-swagger==0.2.13     # via apache-airflow
-flask-wtf==0.14.2         # via apache-airflow, flask-appbuilder
-flask==1.0.2              # via apache-airflow, flask-admin, flask-appbuilder, flask-babel, flask-caching, flask-login, flask-openid, flask-sqlalchemy, flask-swagger, flask-wtf
-flower==0.9.3             # via apache-airflow
-funcsigs==1.0.0           # via apache-airflow
-future==0.16.0            # via apache-airflow
-gitdb2==2.0.5             # via gitpython
-gitpython==2.1.11         # via apache-airflow
-gunicorn==19.9.0          # via apache-airflow
-idna==2.8                 # via requests
-iso8601==0.1.12           # via apache-airflow
-itsdangerous==1.1.0       # via flask
-jinja2==2.10              # via apache-airflow, flask, flask-babel
-json-merge-patch==0.2     # via apache-airflow
-kombu==4.5.0              # via celery
-lockfile==0.12.2          # via python-daemon
-lxml==4.3.3               # via apache-airflow
-mako==1.0.9               # via alembic
-markdown==2.6.11          # via apache-airflow
-markupsafe==1.1.1         # via jinja2, mako
-numpy==1.16.3             # via pandas
-ordereddict==1.1          # via funcsigs
-pandas==0.24.2            # via apache-airflow
-pendulum==1.4.4           # via apache-airflow
-psutil==5.6.2             # via apache-airflow
+    # via -r requirements.in
+babel==2.6.0
+    # via
+    #   flask-babel
+    #   flower
+backports-abc==0.5
+    # via tornado
+billiard==3.5.0.5
+    # via celery
+celery==4.1.1
+    # via
+    #   apache-airflow
+    #   flower
+certifi==2019.3.9
+    # via requests
+chardet==3.0.4
+    # via requests
+click==7.0
+    # via
+    #   flask
+    #   flask-appbuilder
+colorama==0.4.1
+    # via flask-appbuilder
+configparser==3.5.3
+    # via apache-airflow
+croniter==0.3.30
+    # via apache-airflow
+dill==0.2.9
+    # via apache-airflow
+docutils==0.14
+    # via python-daemon
+enum34==1.1.10
+    # via apache-airflow
+flask-admin==1.5.3
+    # via apache-airflow
+flask-appbuilder==1.12.3
+    # via apache-airflow
+flask-babel==0.12.2
+    # via flask-appbuilder
+flask-caching==1.3.3
+    # via apache-airflow
+flask-login==0.4.1
+    # via
+    #   apache-airflow
+    #   flask-appbuilder
+flask-openid==1.2.5
+    # via flask-appbuilder
+flask-sqlalchemy==2.4.0
+    # via flask-appbuilder
+flask-swagger==0.2.13
+    # via apache-airflow
+flask-wtf==0.14.2
+    # via
+    #   apache-airflow
+    #   flask-appbuilder
+flask==1.0.2
+    # via
+    #   apache-airflow
+    #   flask-admin
+    #   flask-appbuilder
+    #   flask-babel
+    #   flask-caching
+    #   flask-login
+    #   flask-openid
+    #   flask-sqlalchemy
+    #   flask-swagger
+    #   flask-wtf
+flower==0.9.3
+    # via apache-airflow
+funcsigs==1.0.0
+    # via apache-airflow
+future==0.16.0
+    # via apache-airflow
+futures==3.3.0
+    # via
+    #   flower
+    #   tenacity
+    #   tornado
+gitdb2==2.0.5
+    # via gitpython
+gitpython==2.1.11
+    # via apache-airflow
+gunicorn==19.9.0
+    # via apache-airflow
+idna==2.8
+    # via requests
+iso8601==0.1.12
+    # via apache-airflow
+itsdangerous==1.1.0
+    # via flask
+jinja2==2.10
+    # via
+    #   apache-airflow
+    #   flask
+    #   flask-babel
+json-merge-patch==0.2
+    # via apache-airflow
+kombu==4.5.0
+    # via celery
+lockfile==0.12.2
+    # via python-daemon
+lxml==4.3.3
+    # via apache-airflow
+mako==1.0.9
+    # via alembic
+markdown==2.6.11
+    # via apache-airflow
+markupsafe==1.1.1
+    # via
+    #   jinja2
+    #   mako
+monotonic==1.5
+    # via tenacity
+numpy==1.16.3
+    # via pandas
+ordereddict==1.1
+    # via funcsigs
+pandas==0.24.2
+    # via apache-airflow
+pendulum==1.4.4
+    # via apache-airflow
+psutil==5.6.2
+    # via apache-airflow
 psycopg2-binary==2.8.2
-pygments==2.3.1           # via apache-airflow
-python-daemon==2.1.2      # via apache-airflow
-python-dateutil==2.8.0    # via alembic, apache-airflow, croniter, flask-appbuilder, pandas, pendulum
-python-editor==1.0.4      # via alembic
-python3-openid==3.1.0     # via flask-openid
-pytz==2019.1              # via babel, celery, flower, pandas, tzlocal
-pytzdata==2019.1          # via pendulum
-pyyaml==5.1               # via flask-swagger
-redis==3.2.1              # via apache-airflow
-requests==2.21.0          # via apache-airflow
-setproctitle==1.1.10      # via apache-airflow
-six==1.12.0               # via python-dateutil, tenacity, thrift
-smmap2==2.0.5             # via gitdb2
-sqlalchemy==1.2.19        # via alembic, apache-airflow, flask-sqlalchemy
-tabulate==0.8.3           # via apache-airflow
-tenacity==4.12.0          # via apache-airflow
-text-unidecode==1.2       # via apache-airflow
-thrift==0.11.0            # via apache-airflow
-tornado==5.1.1            # via apache-airflow, flower
-tzlocal==1.5.1            # via apache-airflow, pendulum
-unicodecsv==0.14.1        # via apache-airflow
-urllib3==1.24.3           # via requests
-vine==1.3.0               # via amqp
-werkzeug==0.14.1          # via apache-airflow, flask, flask-caching
-wtforms==2.2.1            # via flask-admin, flask-wtf
-zope.deprecation==4.4.0   # via apache-airflow
+    # via -r requirements.in
+pygments==2.3.1
+    # via apache-airflow
+python-daemon==2.1.2
+    # via apache-airflow
+python-dateutil==2.8.0
+    # via
+    #   alembic
+    #   apache-airflow
+    #   croniter
+    #   flask-appbuilder
+    #   pandas
+    #   pendulum
+python-editor==1.0.4
+    # via alembic
+python-openid==2.2.5
+    # via flask-openid
+pytz==2019.1
+    # via
+    #   babel
+    #   celery
+    #   flower
+    #   pandas
+    #   tzlocal
+pytzdata==2019.1
+    # via pendulum
+pyyaml==5.4
+    # via flask-swagger
+redis==3.2.1
+    # via apache-airflow
+requests==2.21.0
+    # via apache-airflow
+setproctitle==1.1.10
+    # via apache-airflow
+singledispatch==3.6.1
+    # via tornado
+six==1.12.0
+    # via
+    #   python-dateutil
+    #   singledispatch
+    #   tenacity
+    #   thrift
+smmap2==2.0.5
+    # via gitdb2
+sqlalchemy==1.2.19
+    # via
+    #   alembic
+    #   apache-airflow
+    #   flask-sqlalchemy
+tabulate==0.8.3
+    # via apache-airflow
+tenacity==4.12.0
+    # via apache-airflow
+text-unidecode==1.2
+    # via apache-airflow
+thrift==0.11.0
+    # via apache-airflow
+tornado==5.1.1
+    # via
+    #   apache-airflow
+    #   flower
+typing==3.7.4.3
+    # via apache-airflow
+tzlocal==1.5.1
+    # via
+    #   apache-airflow
+    #   pendulum
+unicodecsv==0.14.1
+    # via apache-airflow
+urllib3==1.24.3
+    # via requests
+vine==1.3.0
+    # via amqp
+werkzeug==0.14.1
+    # via
+    #   apache-airflow
+    #   flask
+    #   flask-caching
+wtforms==2.2.1
+    # via
+    #   flask-admin
+    #   flask-wtf
+zope.deprecation==4.4.0
+    # via apache-airflow
